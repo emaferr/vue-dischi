@@ -17,25 +17,55 @@
         <title>Vue | Dischi</title>
 
         <!-- Favicon -->
-        <link rel="icon" href="" type="image/png" />
+        <link rel="icon" href="./assets/img/icona_dischi.png" type="image/png" />
 
         <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
 
         <!-- Fontawesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 
       </head>
 
-      <body>
+      <body class="bg_body">
 
         <div id="app">
 
-          <header></header>
+          <header>
 
-          <main></main>
+            <nav class="navbar bg_card mb-5">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                  <img src="./assets/img/icona_dischi.png" alt="" width="40" height="40" class="d-inline-block align-text-middle">
+                </a>
+              </div>
+            </nav>
+
+          </header>
+
+          <main>
+
+            <div class="contenitore_card d-flex justify-content-center flex-wrap ">
+              <div v-for="(disco, index) in dischi" class="card bg_card rounded-0 mt-4 mx-2 shadow-sm" style="width: 18rem;">
+                <img :src="disco.poster" class="card-img-top p-3" alt="">
+                <div class="card-body text-center">
+                  <h5 class="card-title text-white">{{disco.title}}</h5>
+                  <div class="card-text d-flex flex-column text-white-50">
+                    <span>{{disco.author}}</span>
+                    <span>{{disco.year}}</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+           
+            
+
+          </main>
   
           <footer></footer>
-          
+
         </div>
 
         <!-- Optional JavaScript; choose one of the two! -->
