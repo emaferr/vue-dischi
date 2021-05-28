@@ -61,7 +61,7 @@
 
              
 
-              <div v-for="(disco, index) in even(dischi)" v-if="selezione.includes(disco.genre)" class="card bg_card rounded-0 mt-4 mx-4 shadow-sm" style="width: 12rem;">
+              <div v-for="(disco, index) in ordina(dischi)" v-if="selezione.includes(disco.genre)" class="card bg_card rounded-0 mt-4 mx-4 shadow-sm" style="width: 12rem;">
                 <img style="width: 190px; height: 190px;" :src="disco.poster" class="card-img-top pt-3 px-3" alt="">
                 <div class="card-body text-center">
                   <h4 class="card-title text-white">{{disco.title}}</h4>
