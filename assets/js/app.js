@@ -17,7 +17,7 @@ const app = new Vue({
     },
 
 
-    // Ordino gli Albumm per data
+    // ordino gli Albumm per data
     methods: {
         ordina: function(arr) {
           // Set slice() to avoid to generate an infinite loop!

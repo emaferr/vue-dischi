@@ -33,6 +33,7 @@
         <div v-if="dischi.length" id="app">
 
           <header>
+
             <nav class="navbar bg_card mb-5">
               <div class="container-fluid">
                 <a class="navbar-brand" href="#">
@@ -43,23 +44,20 @@
 
           </header>
 
+          <div id="seleziona" class="text-center mb-2">
+            <label class="d-block mb-2 text-white-50" for="seleziona">Seleziona genere</label>
+            <select name="genere" id="genere" v-model="selezione">
+              <option selected value="'Rock', 'Pop', 'Jazz', 'Metal'">Tutti</option>
+              <option value="Rock">Rock</option>
+              <option value="Pop">Pop</option>
+              <option value="Jazz">Jazz</option>
+              <option value="Metal">Metal</option>
+            </select>
+          </div>
+
           <main>
 
-            
-
             <div class="contenitore_card d-flex justify-content-center flex-wrap ">
-
-              <div>
-                <select name="genere" id="genere" v-model="selezione">
-                  <option disabled>All</option>
-                  <option value="Rock">Rock</option>
-                  <option value="Pop">Pop</option>
-                  <option value="Jazz">Jazz</option>
-                  <option value="Metal">Metal</option>
-                </select>
-              </div>
-
-             
 
               <div v-for="(disco, index) in ordina(dischi)" v-if="selezione.includes(disco.genre)" class="card bg_card rounded-0 mt-4 mx-4 shadow-sm" style="width: 12rem;">
                 <img style="width: 190px; height: 190px;" :src="disco.poster" class="card-img-top pt-3 px-3" alt="">
