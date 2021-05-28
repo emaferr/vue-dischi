@@ -16,9 +16,16 @@ const app = new Vue({
 
     },
 
+
+    // Ordino gli Albumm per data
     methods: {
- 
-    },
+        ordina: function(arr) {
+          // Set slice() to avoid to generate an infinite loop!
+          return arr.slice().sort(function(a, b) {
+            return a.year - b.year;
+          });
+        }
+      },
 
     mounted() {
         
