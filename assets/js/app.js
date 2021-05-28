@@ -12,11 +12,14 @@ const app = new Vue({
 
         dischi : [],
 
+        selezione : ['Rock', 'Pop', 'Jazz', 'Metal'],
+
     },
 
     methods: {
-        
+ 
     },
+
     mounted() {
         
         axios
@@ -30,18 +33,11 @@ const app = new Vue({
             for (let index = 0; index < raccolta.length; index++) {
 
             this.dischi.push(raccolta[index])
-               
+
            }
 
-           console.log(this.dischi);
-
         })
-
-        .catch(e => {
-
-            console.error(e);
-
-        })
+        
     },
 
 })
