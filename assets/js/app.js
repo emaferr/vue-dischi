@@ -12,7 +12,7 @@ const app = new Vue({
 
         dischi : [],
 
-        selezione : ['Rock', 'Pop', 'Jazz', 'Metal'],
+        selezione : [],
 
     },
 
@@ -44,12 +44,28 @@ const app = new Vue({
 
             for (let index = 0; index < raccolta.length; index++) {
 
+            let genere = raccolta[index].genre
+
             this.dischi.push(raccolta[index])
 
+            if (!this.selezione.includes(genere)){
+
+              this.selezione.push(genere)
+            }
+
            }
+
+           console.log(this.selezione);
+
+          //  if (!this.selezione.includes(this.raccolta.genre)){
+          //   this.selezione.push(this.raccolta.genre)
+          // }
+
+          //  console.log(this.selezione);
 
         })
         
     },
 
 })
+
