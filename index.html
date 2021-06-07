@@ -50,14 +50,15 @@
 
             <div id="seleziona" class="text-center mb-2">
               <label class="d-block mb-2 text-white-50" for="genere">Seleziona genere</label>
-              <select name="genere" id="genere" v-model="selezione">
-                <option v-for="genere in selezione" :value="genere">{{genere}}</option>   
+              <select name="genere" id="genere" v-model="genere">
+                <option selected :value="generi">All</option>
+                <option v-for="genere in generi" :value="genere">{{genere}}</option>   
               </select>
             </div>
 
             <div class="contenitore_card d-flex justify-content-center flex-wrap ">
 
-              <div v-for="disco in ordina(dischi)" v-if="selezione.includes(disco.genre)" class="card bg_card rounded-0 mt-4 mx-4 shadow-sm" style="width: 12rem;">
+              <div v-for="disco in ordinaPerData(dischi)" v-if="genere.includes(disco.genre)" class="card bg_card rounded-0 mt-4 mx-4 shadow-sm" style="width: 12rem;">
                 <img style="width: 190px; height: 190px;" :src="disco.poster" class="card-img-top pt-3 px-3" alt="">
                 <div class="card-body text-center">
                   <h4 class="card-title text-white">{{disco.title}}</h4>

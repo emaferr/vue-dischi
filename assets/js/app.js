@@ -12,7 +12,9 @@ const app = new Vue({
 
         dischi : [],
 
-        selezione : [],
+        generi : [],
+
+        genere : '',
 
     },
 
@@ -20,7 +22,7 @@ const app = new Vue({
     // ordino gli Albumm per data
     methods: {
 
-        ordina: function(arr) {
+        ordinaPerData: function(arr) {
           // Set slice() to avoid to generate an infinite loop!
           return arr.slice().sort(function(a, b) {
 
@@ -44,24 +46,20 @@ const app = new Vue({
 
             for (let index = 0; index < raccolta.length; index++) {
 
-            let genere = raccolta[index].genre
-
             this.dischi.push(raccolta[index])
 
-            if (!this.selezione.includes(genere)){
+            let genere = raccolta[index].genre
 
-              this.selezione.push(genere)
+            if (!this.generi.includes(genere)){
+
+               this.generi.push(genere)
             }
 
            }
 
-           console.log(this.selezione);
+           console.log(this.generi);
 
-          //  if (!this.selezione.includes(this.raccolta.genre)){
-          //   this.selezione.push(this.raccolta.genre)
-          // }
-
-          //  console.log(this.selezione);
+           this.genere = this.generi
 
         })
         
